@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        *{
+padding: 0;
+margin: 0;
+}
+body{
+    height: 2000px;
+    background: linear-gradient(180deg, rgba(20,20,20, 0.7),rgba(50, 150, 100,0.7),rgba(200, 10, 0, 0.7), blue,rgb(210, 91, 47));
+}
+.social-link{
+    display: block;
+    position: fixed;
+    left: 80%;
+    top: 85%;
+}
+@media screen and (min-width: 700px){
+    .social-link{
+        display: block;
+        position: fixed;
+        left: 95%;
+        top: 85%;
+    }
+}
+@media screen and (min-width:700px) and (max-width:1500px){
+    .social-link{
+        display: block;
+        position: fixed;
+        left: 90%;
+        top: 85%;
+    }
+}
+.open{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.4px 0.4px 0.4em black;
+    position: absolute;
+    z-index: 0;
+    height: 70px;
+    width: 70px;
+    background: white;
+    border-radius: 50%;
+}
+.close{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: -1;
+    height: 70px;
+    width: 70px;
+    background: black; 
+    border-radius: 50%;
+}
+.facebook{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: -2;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.instagram{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: -2;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.twitter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: -2;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.tiktok{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: -2;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.youtube{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: -2;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+    </style>
+
+<div class="social-link">
+    <div class="open"><img src="https://img.icons8.com/ios-filled/50/null/share--v1.png"/></div>
+    <div class="facebook"><img src="https://img.icons8.com/color/50/null/facebook.png"/></div>
+    <div class="instagram"><img src="https://img.icons8.com/fluency/50/null/instagram-new.png"/></div>
+    <div class="twitter"><img src="https://img.icons8.com/color/50/null/twitter--v1.png"/></div>
+    <div class="tiktok"><img src="https://img.icons8.com/color/50/null/tiktok--v1.png"/></div>
+    <div class="youtube"><img src="https://img.icons8.com/color/50/null/youtube-play.png"/></div>
+    <div class="close"><img src="https://img.icons8.com/glyph-neue/50/ffffff/delete-sign.png"/></div>
+</div>
+<script>
+    const btnOpen = document.querySelector(".open");
+const btnClose = document.querySelector(".close");
+const myFacebook = document.querySelector(".facebook");
+const myInstagram = document.querySelector(".instagram");
+const myTwitter = document.querySelector(".twitter");
+const myTiktok = document.querySelector(".tiktok");
+const myYoutube = document.querySelector(".youtube");
+
+btnOpen.addEventListener("click",()=>{
+    btnOpen.style.zIndex = "-1";
+    btnClose.style.zIndex = "0";
+    btnOpen.style.transform = "rotate(360deg)";
+    btnOpen.style.transition = "1s";
+    myFacebook.style.transform = "translateY(-70px)";
+    myInstagram.style.transform = "translateY(-140px)";
+    myTwitter.style.transform = "translateY(-210px)";
+    myTiktok.style.transform = "translateY(-280px)";
+    myYoutube.style.transform = "translateY(-350px)";
+});
+btnClose.addEventListener("click",()=>{
+    btnClose.style.zIndex = "-1";
+    btnOpen.style.zIndex = "0";
+    btnClose.style.transform = "rotate(-360deg)";
+    btnClose.style.transition = "1s";
+    myFacebook.style.transform = "translateY(0)";
+    myInstagram.style.transform = "translateY(0)";
+    myTwitter.style.transform = "translateY(0)";
+    myTiktok.style.transform = "translateY(0)";
+    myYoutube.style.transform = "translateY(0)";
+});
+</script>
+
+    <script src="code.js"></script>
+</body>
+</html>
